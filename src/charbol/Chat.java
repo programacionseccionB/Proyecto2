@@ -5,6 +5,7 @@
  */
 package charbol;
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -48,6 +49,7 @@ public class Chat extends javax.swing.JFrame {
     public Chat() {
         initComponents();
         alInicio();
+        this.getContentPane().setBackground(Color.DARK_GRAY);
     }
 
     /**
@@ -68,11 +70,12 @@ public class Chat extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1500, 1500));
         setMinimumSize(new java.awt.Dimension(139, 91));
         setPreferredSize(new java.awt.Dimension(982, 500));
+        setResizable(false);
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 
         txtChatResponse.setColumns(20);
-        txtChatResponse.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        txtChatResponse.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         txtChatResponse.setLineWrap(true);
         txtChatResponse.setRows(5);
         txtChatResponse.setWrapStyleWord(true);
@@ -85,7 +88,10 @@ public class Chat extends javax.swing.JFrame {
             }
         });
 
-        btnBackToMenu.setText("Back to Menu");
+        btnBackToMenu.setBackground(new java.awt.Color(153, 0, 102));
+        btnBackToMenu.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        btnBackToMenu.setForeground(new java.awt.Color(255, 255, 255));
+        btnBackToMenu.setText("Salir del Chat");
         btnBackToMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackToMenuActionPerformed(evt);
@@ -99,7 +105,7 @@ public class Chat extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
                     .addComponent(txtChatEntry)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -110,7 +116,7 @@ public class Chat extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtChatEntry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
@@ -125,7 +131,12 @@ public class Chat extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Envio de entrada para procesar
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            //System.out.println("Ha presionado enter!");
+            evaluarPrimero();
+            busarArbol();
+        }
+    }//GEN-LAST:event_txtChatEntryKeyPressed
+    private void busarArbol(){
+        //System.out.println("Ha presionado enter!");
             
             //######################################################
             textoEntrada = txtChatEntry.getText();
@@ -171,19 +182,14 @@ public class Chat extends javax.swing.JFrame {
             //##########################
             //bot(textoSalida);
             //##########################
-        }
-    }//GEN-LAST:event_txtChatEntryKeyPressed
-    private void busarArbol(){
-        
     }
     private void btnBackToMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackToMenuActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        Menu irMenu = new Menu();
-        irMenu.setVisible(true);
-        irMenu.pack();
+        System.exit(0);
+      
     }//GEN-LAST:event_btnBackToMenuActionPerformed
-                                   
+     
+    
     /**
      * @param args the command line arguments
      */
@@ -217,6 +223,16 @@ public class Chat extends javax.swing.JFrame {
                 new Chat().setVisible(true);
             }
         });
+    }
+    
+    private void evaluarPrimero(){
+        String data;
+            data = txtChatEntry.getText();
+            String dataMinuscula = data.toLowerCase();
+            if(data.equals("salir")){
+                System.exit(0);
+            }
+
     }
     
     private void alInicio(){
