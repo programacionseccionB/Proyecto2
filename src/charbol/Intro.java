@@ -143,15 +143,15 @@ public class Intro extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         if (txtEdad.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Debe ingresar una edad y elejir un peso obligatoriamente por favor!");
-
-        } else {
+            JOptionPane.showMessageDialog(null, "Debe ingresar una edad y elejir un peso obligatoriamente por favor,"
+                    + "<<recuerda que tus datos nos ayudaran>>!");
+        }else {
             String nombre = txtNombre.getText();
             String correo = txtEmail.getText();
             int edad = Integer.parseInt(txtEdad.getText());
             int peso = jSliderPeso.getValue();
             
-            if (evaluarData(edad, peso) == true) {
+            if (evaluarData(edad) == true) {
                 JOptionPane.showMessageDialog(null, "Posiblemente tendras que comunicarte "
                         + "con un agente al Tel.24221000 por ser menor de edad"
                         + ",quien te indicara los pasos a seguir para obtener un seguro con nosotros!");
@@ -169,9 +169,9 @@ public class Intro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
     
-    private boolean evaluarData(int edad, int peso){
+    private boolean evaluarData(int edad){
         boolean respuesta=false;
-        if(edad<18||peso<60){
+        if(edad<18){
             respuesta = true;
         }
         return respuesta;
