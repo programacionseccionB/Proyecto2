@@ -151,8 +151,8 @@ public class PreguntasRespuestas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     //Método para ingresar preguntas con posibles respuestas
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        posibleQuestion = txtQuestion.getText();
-        posibleAnswer = txtAnswer.getText();
+        posibleQuestion = txtQuestion.getText().replaceAll("[^a-zA-Z0-9]+","");
+        posibleAnswer = txtAnswer.getText().replaceAll("[^a-zA-Z0-9]+","");
         
         if(jRadioButtonMenu.isSelected()){
             String dirMenu = "Menu.txt";

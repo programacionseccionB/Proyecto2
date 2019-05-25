@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.text.DefaultCaret;
 
 /**
  *
@@ -139,9 +140,11 @@ public class Chat extends javax.swing.JFrame {
         //System.out.println("Ha presionado enter!");
             
             //######################################################
-            textoEntrada = txtChatEntry.getText();
+            textoEntrada = txtChatEntry.getText().replaceAll("[^a-zA-Z0-9]+","");
             aMinusculas = textoEntrada.toLowerCase();
             txtChatResponse.append("Cliente -> "+textoEntrada+"\n");
+            DefaultCaret caret = (DefaultCaret)txtChatResponse.getCaret();
+            caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
             txtChatEntry.setText("");
             //######################################################
             //Testing
@@ -227,7 +230,7 @@ public class Chat extends javax.swing.JFrame {
     
     private void evaluarPrimero(){
         String data;
-            data = txtChatEntry.getText();
+            data = txtChatEntry.getText().replaceAll("[^a-zA-Z0-9]+","");
             String dataMinuscula = data.toLowerCase();
             if(data.equals("salir")){
                 System.exit(0);

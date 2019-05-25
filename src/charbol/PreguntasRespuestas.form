@@ -40,16 +40,12 @@
                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <Component id="txtQuestion" min="-2" pref="416" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                          <Component id="jRadioButtonMenu" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButtonNecesitoDoctor" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButtonAtencionMedica" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButtonCentroDiagnostico" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButtonSeguroIndividual" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="txtAnswer" alignment="0" min="-2" pref="416" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jRadioButtonMenu" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioButtonNecesitoDoctor" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioButtonAtencionMedica" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioButtonCentroDiagnostico" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioButtonSeguroIndividual" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAnswer" alignment="0" min="-2" pref="416" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
